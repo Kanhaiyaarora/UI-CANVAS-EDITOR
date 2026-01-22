@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Canvas Editor</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.8.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="sidebar" class="glass">
+      <h3>
+        <span> <i class="ri-sketching"></i></span> UI Canvas Editor
+      </h3>
+      <button id="addRect">
+        <span><i class="ri-rectangle-line"></i></span> Add Rectangle
+      </button>
+      <button id="addText">
+        <span><i class="ri-t-box-line"></i></span> Add Text
+      </button>
+      <button id="deleteBtn">
+        <span><i class="ri-delete-bin-line"></i></span> Delete Element
+      </button>
+      <button id="exportJSON">
+        <span><i class="ri-download-2-line"></i></span> Export JSON
+      </button>
+      <button id="exportHTML">
+        <span><i class="ri-download-2-line"></i></span> Export HTML
+      </button>
+    </div>
+
+    <div id="canvas-wrap">
+      <div id="canvas" class="glass"></div>
+    </div>
+
+    <div id="right" class="glass">
+      <h3>
+        <span><i class="ri-stack-line"></i></span> Layers
+      </h3>
+      <div id="layers"></div>
+      <h3>
+        <span><i class="ri-stack-line"></i></span> Properties
+      </h3>
+      <div id="props"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>

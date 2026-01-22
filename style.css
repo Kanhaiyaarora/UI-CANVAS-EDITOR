@@ -1,0 +1,217 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  background: linear-gradient(135deg, #3a0ca3, #7209b7, #560bad);
+  color: #f8fafc;
+  overflow: hidden;
+}
+
+/* =========================
+   GLASSMORPHISM EFFECT
+========================= */
+.glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   LEFT SIDEBAR
+========================= */
+#sidebar {
+  width: 230px;
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+#sidebar h3 {
+  font-family: "Mea Culpa", cursive;
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
+#right {
+  width: 230px;
+  margin: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 32px);
+}
+
+/* Scrollable sections */
+#layers,
+#props {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* right headings */
+#right h3 {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: rgba(58, 12, 163, 0.9);
+  padding: 6px 0;
+  margin: 0;
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+/* =========================
+   SCROLLBAR 
+========================= */
+#layers::-webkit-scrollbar,
+#props::-webkit-scrollbar {
+  width: 6px;
+}
+
+#layers::-webkit-scrollbar-thumb,
+#props::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+#layers::-webkit-scrollbar-track,
+#props::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+button:active {
+  scale: 0.95;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* =========================
+   CANVAS
+========================= */
+#canvas-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#canvas {
+  width: 900px;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =========================
+   ELEMENTS
+========================= */
+.element {
+  position: absolute;
+  cursor: move;
+}
+
+.rect {
+  background: #4cc9f0;
+  border-radius: 8px;
+}
+
+.text {
+  padding: 6px;
+  min-width: 40px;
+}
+
+/* =========================
+   SELECTION
+========================= */
+.selected {
+  outline: 2px solid #f72585;
+}
+
+/* =========================
+   RESIZE HANDLES
+========================= */
+.handle {
+  width: 10px;
+  height: 10px;
+  background: #f72585;
+  position: absolute;
+}
+
+.tl {
+  top: -5px;
+  left: -5px;
+  cursor: nwse-resize;
+}
+.tr {
+  top: -5px;
+  right: -5px;
+  cursor: nesw-resize;
+}
+.bl {
+  bottom: -5px;
+  left: -5px;
+  cursor: nesw-resize;
+}
+.br {
+  bottom: -5px;
+  right: -5px;
+  cursor: nwse-resize;
+}
+
+/* =========================
+   INPUTS
+========================= */
+input,
+textarea {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 6px;
+  color: #f8fafc;
+  outline: none;
+  min-width: 175px;
+  margin-top: 5px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+  margin-top: 2px;
+}
+
+/* =========================
+   LAYERS ROW 
+========================= */
+#layers > div {
+  margin-bottom: 6px;
+}
